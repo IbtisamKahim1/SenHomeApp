@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../css/css/style.css">
+</head>
+<body class="payment-page">
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="home-icon" 
+            style="position: fixed; top: -20px; left: -20px; z-index: 1000; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+             <img src="../images/icons/icons8-home-page-64.png" alt="Home" 
+                  style="width: 50px; height: 50px; display: block;"> 
+         </a>
+         
+            <h1>Payment Section</h1>
+        </div>
+    </header>
+
+    <main class="payment-container">
+        <section class="payment-info">
+            <h2>Secure Payments</h2>
+            <p>Use this section to securely manage payments for your selected items.</p>
+            <h3>Total Payment: £<span id="payment-total">0.00</span></h3>
+
+        </section>
+
+        <section class="payment-form">
+            <h2>Make a Payment</h2>
+            <form action="/submit-payment" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="amount">Total Amount (£):</label>
+                <input type="number" id="amount" name="amount" required min="1" readonly>
+            
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="paymentMethod">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            
+                <div id="card-details" style="display: none;">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9101 1121" maxlength="19">
+            
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY" maxlength="5">
+            
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3">
+                </div>
+            
+                <button type="submit">Pay Now</button>
+            </form>
+            
+        </section>
+    </main>
+
+    <script src="../js/js/main.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let totalPayment = localStorage.getItem("totalPayment");
+        let amountField = document.getElementById("amount");
+        let paymentTotalField = document.getElementById("payment-total");
+        let paymentMethodSelect = document.getElementById("payment-method");
+        let cardDetails = document.getElementById("card-details");
+        let paymentForm = document.querySelector("form");
+
+        // ✅ Ensure total payment value is updated
+        if (totalPayment) {
+            amountField.value = totalPayment;
+            paymentTotalField.innerText = "£" + totalPayment;
+        }
+
+        // ✅ Ensure card details section exists before modifying it
+        if (paymentMethodSelect) {
+            paymentMethodSelect.addEventListener("change", function () {
+                console.log("Selected Payment Method:", this.value); // Debugging
+                if (this.value === "credit-card") {
+                    cardDetails.style.display = "block";
+                } else {
+                    cardDetails.style.display = "none";
+                }
+            });
+        }
+
+        // ✅ Automatically show card details if "Credit Card" is pre-selected
+        if (paymentMethodSelect.value === "credit-card") {
+            cardDetails.style.display = "block";
+        }
+
+        // ✅ Handle payment submission (New Addition)
+        paymentForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from submitting for now
+
+            // Hide the card details section after submission
+            cardDetails.style.display = "none";
+
+            // Clear stored payment data
+            localStorage.removeItem("totalPayment");
+            localStorage.removeItem("basket");
+
+            // Show a success message
+            alert("Payment successful! Redirecting to home page...");
+
+         // Show a success message with redirect confirmation
+         setTimeout(() => {
+            alert("Payment successful! Redirecting to the home page...");
+            window.location.href = "index.html"; // ✅ Redirect to home page after clicking OK
+        }, 500);
+    });
+});
+</script>
+
+        
+
+</body>
+</html>

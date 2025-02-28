@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensory Toys</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       /* Force 3 images per row */
+       .toy-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Space between items */
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .toy-item {
+        flex: 0 1 calc(33.333% - 20px); /* Ensures 3 items per row */
+        text-align: center;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        max-width: 250px;
+    }
+
+    .toy-item img {
+        width: 100%;
+        height: 150px; /* Fixed height for uniformity */
+        object-fit: cover;
+        display: block;
+        border-radius: 8px;
+    }
+
+    .toy-item p {
+        margin: 10px 0;
+        font-size: 1em;
+        color: #555;
+    }
+
+    .toy-item button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .toy-item button:hover {
+        background-color: #45a049;
+    }   
+    </style>
+</head>
+<body class="toys-page" style="background-image: url('../images/images/SkyBackgroundImage.png'); background-size: cover; background-position: center; background-repeat: np-repeat; background-attachment: fixed;">
+    <header>
+
+        <div class="header-container">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon">
+                <img src="../images/icons/icons8-home-page-64.png" alt="Home">
+            </a>
+        <h1>Sensory Toys</h1>
+    </header>
+    <main>
+        <div class="toy-gallery">
+            <div class="toy-item">
+                <img src="../images/images/BeadDrumNoisySensoryToy.png" alt="Sensory Bead Drum">
+                <p>Sensory Bead Drum</p>
+                <p>Price: £10.99</p>
+                <button onclick="addToBasket('Sensory Bead Drum', 10.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/BusyBoard.png" alt="Busy Board">
+                <p>Busy Board</p>
+                <p>Price: £5.99</p>
+                <button onclick="addToBasket('Busy Board', 5.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/ClearBallPitBalls.png" alt="Pitballs">
+                <p>Pitballs</p>
+                <p>Price: £8.99</p>
+                <button onclick="addToBasket('Pitballs', 10.99)">Add to Basket</button>
+            </div>
+            
+            <div class="toy-item">
+                <img src="../images/images/ColourfulPitball.png" alt="Colourful pitballs">
+                <p>Colourful pitballs</p>
+                <p>Price: £8.99</p>
+                <button onclick="addToBasket('Colourfull pitballs', 21.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/EngagementPhysioRollBall.png" alt="Roll ball">
+                <p>Roll ball</p>
+                <p>Price: £8.99</p>
+                <button onclick="addToBasket('Roll ball', 18.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/FiberOpticLight.png" alt="Fiber Optic Light">
+                <p>Fiber Optic Light</p>
+                <p>Price: £25.69</p>
+                <button onclick="addToBasket('Fiber Optic Light', 25.69)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/GelliSensoryPlay.png" alt="Sensory Gelli">
+                <p>Sensory Gelli</p>
+                <p>Price: £11.99</p>
+                <button onclick="addToBasket('Sensory Gelli', 11.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/MessyMoodTable.png" alt="Messy Mood Table">
+                <p>Sensory Gelli</p>
+                <p>Price: £35.19</p>
+                <button onclick="addToBasket('Messy Mood Table', 35.19)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/MiniBubblerCamingSensoryToy.png" alt="Mini Bubble Calmer">
+                <p>Mini Bubble Calmer</p>
+                <p>Price: £198.99</p>
+                <button onclick="addToBasket('Mini bubble calmer', 198.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/PlayFoamCombo.png" alt="Play Foam Combo">
+                <p> Play Foam Combo</p>
+                <p>Price: £11.99</p>
+                <button onclick="addToBasket('Play Foam Combo', 11.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SensoryBall.png" alt="Sensory Ball">
+                <p> Sensory Ball</p>
+                <p>Price: £10.99</p>
+                <button onclick="addToBasket('Sensory Ball', 10.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SensoryJellyFishPad.png" alt="Sensory Jelly Fish Pad">
+                <p> Play Foam Combo</p>
+                <p>Price: £9.00/p>
+                <button onclick="addToBasket('Sensory Jelly Fish Pad', 9.00)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SensoryMoodEgg.png" alt=" Sensory Mood Egg">
+                <p> Sensory Mood Egg</p>
+                <p>Price: £11.99</p>
+                <button onclick="addToBasket('Sensory Mood Egg', 11.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SensoryVibratingBall.png" alt="Sensory Vibrating Ball">
+                <p> Sensory Vibrating Ball</p>
+                <p>Price: £18.90</p>
+                <button onclick="addToBasket('Sensory Vibrating Ball', 18.90)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SlipperySpheres.png" alt=" Slippery Spheres">
+                <p> Slippery Spheres</p>
+                <p>Price: £12.00</p>
+                <button onclick="addToBasket('Slippery Spheres', 12.00)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SpecialNeedsGiantPianoMat.png" alt=" Giant Piano Mat">
+                <p> Giant Piano Mat</p>
+                <p>Price: £54.17</p>
+                <button onclick="addToBasket(' Giant Piano Mat', 11.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SquareLEDBallPool.png" alt=" LED Ball Pool">
+                <p> LED Ball Pool</p>
+                <p>Price: £254.74</p>
+                <button onclick="addToBasket('LED Ball Pool', 11.99)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/SquidgyKooshBallToy.png" alt=" Squidgy Koosh Ball">
+                <p> Squidgy Koosh Ball</p>
+                <p>Price: £6.75</p>
+                <button onclick="addToBasket('Squidgy Koosh Ball', 6.75)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/ToysImage.png" alt=" Sensory Toy Ball ">
+                <p> Sensory Toy Ball</p>
+                <p>Price: £17.74</p>
+                <button onclick="addToBasket('LED Ball Pool', 17.74)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/VibratingSnake.png" alt=" Sensory Snake Rope">
+                <p> Sensory Snake Rope</p>
+                <p>Price: £24.54</p>
+                <button onclick="addToBasket('Sensory Snake Rope', 24.54)">Add to Basket</button>
+            </div>
+
+            <div class="toy-item">
+                <img src="../images/images/WeightedBlanket.png" alt=" Weighted Blanket">
+                <p> Weighted Blanket</p>
+                <p>Price: £34.74</p>
+                <button onclick="addToBasket('Weighted Blanket', 34.74)">Add to Basket</button>
+            </div>
+
+            
+
+        </div>
+        <a href="basket.html" class="proceed-to-basket">Go to Basket</a>
+    </main>
+    <script src="../js/js/main.js"></script>
+</body>
+</html>

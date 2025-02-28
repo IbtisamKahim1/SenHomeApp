@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="../css/css/style.css">
+</head>
+<body class="resources-page">
+    <header>
+        <div class="header-container">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon" 
+            style="position: absolute; top: -50px; left: -50px; z-index: 1000; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+             <img src="../images/icons/icons8-home-page-64.png" alt="Home" 
+                  style="width: 50px; height: 50px; display: block;">
+         </a>
+            <h1>Resources & Training Options</h1>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Resources Section with Dropdown -->
+        <section>
+            <h2>Resources & Educational Material</h2>
+            <button class="dropdown-button" onclick="toggleDropdown('resourcesDropdown')">Resources ▼</button>
+            <ul id="resourcesDropdown" class="dropdown-content" style="background-color: #8A2BE2 !important; color: white !important;">
+                <li><a href="https://www.specialneedsjungle.com/category/parenting/" target="_blank">Articles</a></li>
+                <li><a href="https://www.youtube.com/watch?v=gXjwZWYejY8" target="_blank">Videos</a></li>
+                <li><a href="https://www.bbcgoodfood.com/howto/guide/sensory-play-ideas-kids" target="_blank">Sensory Activity Guides</a></li>
+            </ul>
+            
+        </section>
+
+        <!-- Training Section with Dropdown -->
+        <section>
+            <h2>Training Materials</h2>
+
+            <!-- Dropdown Button for Training Resources -->
+            <button class="dropdown-button" onclick="toggleDropdown('trainingDropdown')">Training Resources ▼</button>
+            <ul id="trainingDropdown" class="dropdown-content" style="background-color: #8A2BE2 !important; color: white !important;">
+                <li><a href="https://www.sense.org.uk/information-and-advice/ways-of-communicating/makaton/" target="_blank">Sense - Makaton Communication</a></li>
+                <li><a href="https://makaton.org/TMC/TMC/Learn_Makaton/Core_Vocab/Level_1.aspx?" target="_blank">Makaton Core Vocabulary Training</a></li>
+                <li><a href="https://www.autismspeaks.org/what-autism" target="_blank">Understanding Autism - Autism Speaks</a></li>
+                <li><a href="https://allplaylearn.org.au/early/educator/asd/?" target="_blank">AllPlay Learn - Supporting Autistic Children</a></li>
+                <li><a href="https://behavioralinterventionforautism.com/blog/what-are-the-needs-of-a-child-with-autism/" target="_blank">Understanding Autism Needs - Behavioral Intervention</a></li>
+                <li><a href="https://www.integratedtreatmentservices.co.uk/our-approaches/speech-therapy-approaches/makaton/" target="_blank">Makaton Speech Therapy - Integrated Treatment Services</a></li>
+            </ul>
+
+            <!-- Training Booking Dropdown Button -->
+            <button class="dropdown-button" onclick="toggleDropdown('bookingFormContainer')">Training Booking ▼</button>
+
+            <!-- Hidden Training Booking Form -->
+            <div id="bookingFormContainer" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeBookingForm()">&times;</span>
+                    <h2>Book a Training</h2>
+                    <form id="bookingForm" action="/submit-training-booking" method="POST">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="training">Select a Training:</label>
+                        <select id="training" name="training">
+                            <option value="parent_training">Parent Training</option>
+                            <option value="speech_therapy">Speech & Language Therapy</option>
+                            <option value="autism_consultation">Autism Support Consultation</option>
+                        </select>
+
+                        <label for="date">Preferred Date:</label>
+                        <input type="date" id="date" name="date" required>
+
+                        <button type="submit">Submit Booking</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sensory Home App</p>
+    </footer>
+
+    <script>
+        // Toggle Dropdown Function
+        function toggleDropdown(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
+        }
+
+        // Close Booking Form
+        function closeBookingForm() {
+            document.getElementById("bookingFormContainer").style.display = "none";
+        }
+    </script>
+
+    <style>
+        .dropdown-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .dropdown-button:hover {
+            background-color: darkgreen;
+        }
+
+        .dropdown-content {
+            display: none;
+            list-style: none;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+            width: fit-content;
+        }
+
+        .dropdown-content li {
+            margin: 5px 0;
+        }
+
+        .dropdown-content a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 5px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            background: white;
+            padding: 20px;
+            margin: 15% auto;
+            width: 50%;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            color: black;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+
+        .close:hover {
+            color: red;
+        }
+    </style>
+</body>
+</html>

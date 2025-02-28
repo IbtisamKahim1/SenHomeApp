@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultations</title>
+    <link rel="stylesheet" href="../css/css/style.css">
+</head>
+<body class="consultation-page">
+    <header>
+        <div class="header-container">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon" 
+   style="position: absolute; top: -25px; left: -25px; z-index: 1000; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+    <img src="../images/icons/icons8-home-page-64.png" alt="Home" 
+         style="width: 50px; height: 50px; display: block;">
+</a>
+            <h1>Consultations</h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>About Our Consultations</h2>
+            <p>
+                Our consultation services are designed to support families and caregivers in providing the best care for individuals with sensory needs. 
+                We offer personalised advice tailored to your situation, covering topics like:
+            </p>
+            <ul>
+                <li>Home modification for sensory-friendly environments</li>
+                <li>Behavioral strategies for everyday challenges</li>
+                <li>Tools and resources for better engagement</li>
+                <li>Educational support and strategies</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What to Expect</h2>
+            <p>
+                During a consultation, you will:
+            </p>
+            <ul>
+                <li>Speak with a trained specialist</li>
+                <li>Identify specific areas of concern</li>
+                <li>Receive actionable recommendations</li>
+                <li>Discuss follow-up support options</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Book a Consultation</h2>
+            <p>
+                Ready to schedule your consultation? Use the form below to select your preferred date and time. Our team will contact you to confirm your booking.
+            </p>
+            <form action="/submit-consultation" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sensory Home App</p>
+    </footer>
+</body>
+</html>

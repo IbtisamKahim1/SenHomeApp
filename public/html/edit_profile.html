@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Make sure path is correct -->
+</head>
+<body class="edit-profile-page">
+    <header>
+        <div class="header-container">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon">
+                <img src="../images/icons/icons8-home-page-64.png" alt="Home">
+            </a>
+            <h1>Edit Profile</h1>
+        </div>
+    </header>
+
+    <main>
+        <form id="editProfileForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="Siham" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="siham@example.com" required>
+
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sensory Home App</p>
+    </footer>
+
+    <script>
+        document.getElementById("editProfileForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+    
+            // Save profile data
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("joinDate", "January 15, 2024"); // Keep join date fixed for now
+    
+            alert("Profile updated successfully!");
+            window.location.href = "user_profile.html"; // Redirect back to profile page
+        });
+    </script>
+    
+</body>
+</html>

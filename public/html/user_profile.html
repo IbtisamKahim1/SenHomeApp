@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Sensory Home App</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Ensure correct path -->
+</head>
+<body class="user-profile-page" style="background-image: url('../images/images/UserProfileImage3.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+    
+    <header>
+        <div class="header-container">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon">
+                <img src="../images/icons/icons8-home-page-64.png" alt="Home">
+            </a>
+            <h1><span id="usernameTitle">User</span>'s Login Details</h1>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome, <span id="usernameDisplay">User</span>!</h2>
+            <p><strong>Email:</strong> <span id="emailDisplay">user@example.com</span></p>
+            <p><strong>Joined:</strong> <span id="joinDate">January 15, 2024</span></p>
+        </section>
+
+        <section>
+            <h2>Actions</h2>
+            <button onclick="navigateToPage('edit_profile.html')">Edit Profile</button>
+            <button id="logoutButton">Logout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sensory Home App</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (!isLoggedIn) {
+                alert("No user logged in. Redirecting to login page.");
+                window.location.href = "login.html"; // Redirect back to login
+                return;
+            }
+    
+            // Retrieve user details from localStorage
+            document.getElementById("usernameTitle").innerText = localStorage.getItem("username") || "User";
+            document.getElementById("usernameDisplay").innerText = localStorage.getItem("username") || "User";
+            document.getElementById("emailDisplay").innerText = localStorage.getItem("email") || "Not Available";
+            document.getElementById("joinDate").innerText = new Date().toLocaleDateString(); // Display current date for now
+        });
+    
+        function logout() {
+            localStorage.clear(); // Clear user data
+            alert("Logged out successfully!");
+            window.location.href = "login.html"; // Redirect to login
+        }
+    </script>
+        
+
+</body>
+</html>

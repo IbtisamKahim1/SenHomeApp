@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Basket</title>
+    <link rel="stylesheet" href="../css/css/style.css">
+</head>
+<body class="basket-page">
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="home-icon" 
+            style="position: absolute; top: -45px; left: -45px; z-index: 1000; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+             <img src="../images/icons/icons8-home-page-64.png" alt="Home" 
+                  style="width: 50px; height: 50px; display: block;">
+         </a>
+            <h1>Your Basket</h1>
+        </div>
+    </header>
+
+    <main class="basket-container">
+        <h2>Items in Your Basket</h2>
+        <div id="basket-items"></div>
+        <h3>Total: £<span id="basket-total">0.00</span></h3>
+        
+        <button id="proceedToPayment">Proceed to Payment</button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let basket = JSON.parse(localStorage.getItem("basket")) || [];
+                let basketContainer = document.getElementById("basket-items");
+                let basketTotal = document.getElementById("basket-total");
+        
+                function updateBasketUI() {
+                    basketContainer.innerHTML = "";
+                    let total = 0;
+        
+                    basket.forEach((item, index) => {
+                        let itemDiv = document.createElement("div");
+                        itemDiv.innerHTML = `
+                            <p>${item.name} - £${item.price.toFixed(2)} 
+                            <button class="remove-item" data-index="${index}">Remove</button></p>
+                        `;
+                        basketContainer.appendChild(itemDiv);
+                        total += item.price;
+                    });
+        
+                    basketTotal.innerText = total.toFixed(2);
+                    localStorage.setItem("basket", JSON.stringify(basket));
+                }
+        
+                basketContainer.addEventListener("click", function(event) {
+                    if (event.target.classList.contains("remove-item")) {
+                        let index = event.target.getAttribute("data-index");
+                        basket.splice(index, 1);
+                        localStorage.setItem("basket", JSON.stringify(basket));
+                        updateBasketUI();
+                    }
+                });
+        
+                document.getElementById("proceedToPayment").addEventListener("click", function() {
+                    localStorage.setItem("totalPayment", basketTotal.innerText);
+                    window.location.href = "payment.html";
+                });
+        
+                updateBasketUI();
+            });
+        </script>
+        
+
+    </main>
+
+    <script src="../js/js/main.js"></script>
+</body>
+</html>

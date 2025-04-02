@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true })); // Middleware for form-urlencod
 app.use(require('cors')());
 
 // Serve Static Files from the Public Folder
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '..')));
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -25,8 +25,8 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => console.error("Database connection failed:", err));
 
 // Serves Consultation Page
-app.get('/html/Consultation_page.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/html/Consultation_page.html'));
+app.get('/consultation', (req, res) => {
+  res.sendFile(path.join(__dirname, '/consultation_page.html'));
 });
 
 // Handle POST request for consultation form
@@ -50,9 +50,6 @@ app.post('/submit-service-request', (req, res) => {
   res.send('Service request submitted successfully!');
 });
 
-//handles payment
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 //handles post payment
 app.post('/submit-payment', (req, res) => {
@@ -64,7 +61,7 @@ app.post('/submit-payment', (req, res) => {
 });
 
 // Root Route - Serve index.html
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../public/html/index.html'))); // Serves the homepage
+app.get('/', (req, res) => rres.sendFile(path.join(__dirname, '..', 'index.html'))); // Serves the homepage
 
 app.post('/api/register', async (req, res) => {
   const { username, email, password } = req.body;

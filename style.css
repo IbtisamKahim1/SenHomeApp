@@ -1,0 +1,1074 @@
+/* Default Body Style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common Header Style */
+header {
+    color: rgb(219, 105, 185);
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+main {
+    position: relative;
+    z-index: 1;  /* Ensure it stays below the header */
+}
+
+
+/* Navigation Bar Style */
+
+nav {
+    margin-top: 20px;
+}
+
+
+nav ul {
+    display: flex; /* Horizontal alignment by default */
+    justify-content: center;
+    list-style: none; /* Remove bullet points */
+    padding: 10px 0;
+    background: transparent; /* Adds a semi-transparent background */
+}
+
+nav ul li {
+    margin: 0 10px; /* Add spacing between links */
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+    font-size: 16px; /* Adjust font size */
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Home Page Navigation Bar Specific Styling */
+body.home-page nav ul {
+    justify-content: center;
+}
+
+/* Non-Home Page Navigation Bar Styling */
+body:not(.home-page) nav ul {
+    flex-direction: column; /* Stack links vertically for non-home pages */
+    align-items: center;
+}
+
+/* Common Footer Style */
+footer {
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.6); /* Matches the header */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Index Page Background */
+body.home-page {
+    background-image: url('../images/SensoryHomePage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Room Modification Page Background */
+body.room-page {
+    background-image: url('../images/RoomModificationBackGroundImage1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e1a2ef;
+    color: black; /* Text color for readability */
+}
+
+header h1 {
+    text-align: center;  /* Center-align the title */
+    margin: 0; /* Remove default margin */
+    padding: 20px 0; /* Add spacing around the title */
+    color: #333;   /* Set text color */
+    font-size: 2.5em;  /* Adjust font size for better visibility */
+    z-index: 2;  /* Ensure it appears above other elements */
+    position: realtive;  /* Ensures it's not affected by absolute positioning */
+}
+.room-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive colums */
+    gap: 40px; /* Space between grid items  */
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px ;
+
+}
+
+.room-item {
+    position: relative; /* Allows positioning of child elements */
+    overflow: hidden; /* Prevents content from spilling out */
+    background: white; /* Background color for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    padding: 10px; /* Padding inside the container */
+    margin: 10px; /* Spacing between containers */
+    max-width: 250px; /* Optional: Limit width of each item */
+    display: flex; /* Align children */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Spread out children evenly */
+    height: 100%; /* Make sure the container accommodates all elements */
+}
+
+.room-item button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Add padding for the button */
+    font-size: 1rem; /* Adjust font size */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-top: 10px; /* Add spacing above the button */
+    align-self: center; /* Center the button */
+    width: 80%; /* Adjust button width to be less than full width */
+}
+
+.room-item button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+.room-item img{
+    width: 100%; /* Make the image take the full width of the container */
+    height: 100px; /* Set a fixed height for uniformity */
+    object-fit: cover;
+    display: block; /* Ensure proper alignment */
+}
+
+.room-item p {
+    margin-top: 10px 0; /* Adds some spacing below text */
+    font-size: 1em; /* Its to adjust font size */
+    color: #555; /* Gray text color */
+    flex-grow: 1; /* Push the text down to make space for the button */
+}
+
+/* Style for the Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+}
+
+/* Style for Modal Content (Image) */
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Style for Caption */
+.caption {
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+/* Style for Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Proper alignment */
+    z-index: 2;  /* Ensure it appears above the background */
+}
+
+.home-icon img {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    cursor: pointer; /* Show pointer cursor on hover */
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    z-index: 30;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Ensure it's fully visible */
+}
+
+/* Login Page Title Styling */
+body.login-page h1 {
+    color: white; /* Ensure white text */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker grey transparent background */
+    padding: 10px 20px; /* Space around the text */
+    display: inline-block; /* Keeps the background wrapped */
+    width: auto; /* Let it adjust based on text length */
+    border-radius: 8px; /* Soft rounded corners */
+    text-align: center; /* Center text if needed */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow effect */
+}
+
+
+/* Login Page Home Icon */
+body.login-page .home-icon {
+    position: absolute; /* Independent positioning */
+    top: 20px; /* Position similar to About Page */
+    left: 20px; /* Align it properly */
+    z-index: 30; /* Ensure visibility */
+    display: block !important; /* Force it to be visible */
+}
+
+/* Ensure Image Displays Correctly */
+body.login-page .home-icon img {
+    width: 40px !important; /* Same size as Register Page */
+    height: 40px !important;
+    cursor: pointer;
+    background: white !important; /* Ensure white background */
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Ensure visibility */
+}
+
+/* Hover Effect */
+body.login-page .home-icon img:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* About Page Background */
+body.about-page {
+    background-image: url('../images/AboutImage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(217, 142, 50) !important; /* Force white text */
+    text-shadow: 2px 2px 5px rgba(8, 7, 7, 0.8); /* Adds shadow for better visibility */
+    padding: 20px;
+    font-size: 16px;
+    min-height: 100vh; /* Ensures background fully shows */
+}
+
+/* Ensure About Page Header is properly centered */
+.about-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Ensure positioning works */
+}
+
+/* Force center alignment and adjust positioning */
+.about-header h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em; /* Adjust size */
+    font-weight: bold;
+    color: rgb(68, 64, 64) !important; /* Force color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Improve readability */
+    right: -45px; /* Adjust alignment */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9); /* Darker shadow */
+}
+
+body.about-page h1,
+body.about-page h2,
+body.about-page p {
+    color: white !important; /* Force white text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Improve visibility */
+}
+
+/* About Page Specific Home Icon */
+body.about-page .home-icon {
+    position: absolute; /* Independent positioning */
+    top: -35px; /* Positioning to match register page */
+    left: -35px; /* Positioning */
+    z-index: 1; /* Make sure it's above everything */
+    display: block !important; /* Ensure visibility */
+}
+
+/* Ensure Image Displays Correctly */
+body.about-page .home-icon img {
+    width: 40px !important; /* Same size as Register Page */
+    height: 40px !important;
+    cursor: pointer;
+    background: white !important; /* Ensure white background */
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Ensure visibility */
+}
+
+/* Hover Effect */
+body.about-page .home-icon img:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* Hover effect to match Register Page */
+body.about-page .home-icon img:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* User Profile Page Background */
+body.user-profile-page {
+    background-image: url('../images/UserProfileImage3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white !important; /* Force text to be white */
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Ensure all text elements are white */
+body.user-profile-page h1,
+body.user-profile-page h2,
+body.user-profile-page p,
+body.user-profile-page a,
+body.user-profile-page button {
+    color: white !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Improves visibility */
+}
+
+/* Ensure buttons have proper contrast */
+body.user-profile-page button {
+    background-color: rgba(65, 60, 60, 0.2); /* Semi-transparent background */
+    color: white !important;
+    border: 1px solid white; /* Add border for visibility */
+}
+
+body.user-profile-page button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Make links more visible */
+body.user-profile-page a {
+    color: white !important;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+body.user-profile-page a:hover {
+    color: #ddd !important;
+}
+
+/* About Page Specific Home Icon */
+body.user-profile-page .home-icon {
+    position: absolute; /* Independent positioning */
+    top: -35px; /* Positioning to match register page */
+    left: -35px; /* Positioning */
+    z-index: 1; /* Make sure it's above everything */
+    display: block !important; /* Ensure visibility */
+}
+/* Resources Page Background */
+body.resources-page {
+    background-image: url('../images/sandbeach.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(255, 252, 252); /* Set as a default text color */
+    padding: 20px;
+    font-size: 16px;
+}
+
+
+/* Consultation Page Background */
+body.consultation-page {
+    background-image: url('../images/PerfectImage.png');
+    background-color: #754dd4; /* Light blue background */
+    background-size: cover; /* Ensure background covers the page */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(17, 19, 17); /* Ensure text is readable */
+}
+
+body.service-requests-page {
+    background-image: url('../images/ZenOffice1.png'); /* Add a relevant background */
+    background-color:#e1a2ef; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+}
+
+
+/* Link Styling for Resources page */
+
+body.resources-page a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0;
+    display: block; /* Stack links vertically */
+}
+
+body.resources-page a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #555;  /* Slightly darker color on hover */
+}
+
+
+/* Resource Page Header Style */
+body.resource-page header h1 {
+    color:white;
+    font-size: 2.5em; /* for font size adjustament for better readability */
+    margin-bottom: 20px;
+}
+
+body.resources-page header h1 {
+    color: white !important;
+}
+
+/* Registration Page Layout */
+body.register-page {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: space-around; /* Add space between form and image */
+    gap: 200px;
+    height: auto; /* Allow the height to adapt to content */
+    padding: 20px; /* Add padding around the edges */
+    margin: 0; /* Reset margin */
+    background-color: #4d869e;
+}
+
+/* Payment Page Background */
+body.payment-page {
+    background-image: url('../images/Payment.service.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+}
+
+/* Payment Page Layout */
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Payment Form */
+.payment-form {
+    background: rgba(207, 108, 168, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 400px;
+}
+
+/* Form Input Fields */
+.payment-form input,
+.payment-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.payment-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.payment-form button:hover {
+    background-color: #45a049;
+}
+
+/* Basket Page Styling */
+body.basket-page {
+    background-color: #f8f9fa;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Basket Container */
+.basket-container {
+    width: 60%;
+    margin: auto;
+    background: rgb(105, 199, 223);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Basket Items */
+#basket-items {
+    margin: 20px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+/* Checkout Button */
+#checkout-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#checkout-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Form Section */
+.form-container {
+    flex: 0 1 auto; /* Allow the form to shrink or grow */
+    max-width: 900px; /* Set a fixed max width */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.image-box {
+    flex: 0 1 auto; /* Allow it to shrink or grow based on content */
+    max-width: 850px; /* Limit the image container's width */
+    height: auto; /* Ensure height adjusts dynamically */
+}
+
+.image-box img {
+    max-width: 100%; /* Restrict the image width */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for styling */
+}
+
+
+/* Home Icon Styling */
+.home-icon {
+    position: absolute; /* Make it independent of flow */
+    top: -145px; /* Distance from the top */
+    left: -50px; /* Distance from the left */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.home-icon img {
+    width: 40px; /* Adjust size */
+    height: 40px;
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: white; /* Optional: Add background */
+    border-radius: 50%; /* Make it circular */
+    padding: 5px; /* Add spacing inside */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.home-icon img:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, form button {
+    width: 100%; /* Full width for inputs and button */
+    padding: 12px; /* Slightly larger padding for better usability */
+    font-size: 16px; /* Consistent font size */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded edges */
+    margin-bottom: 15px; /* Space between form elements */
+    box-sizing: border-box; /* Include padding in element width */
+}
+
+form button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Slightly larger text for better readability */
+    padding: 15px 20px; /* Add some padding for a better click area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+form button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Sensory Toys Page Background */
+body.toys-page {
+    background-image: url('../images/SkyBackgroundImage.png'); /* Replace with the actual background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e1a2ef; /* Matching room-page background */
+    color: black; /* Ensure text readability */
+}
+
+/* Center and style the page title */
+header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #333;
+    font-size: 2.5em;
+    z-index: 2;
+    position: relative;
+}
+
+/* Toy Gallery - Uses Grid like Room Modification */
+.toy-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Responsive grid layout */
+    gap: 40px; /* Space between items */
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Toy Items - Similar to Room Items */
+.toy-item {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    max-width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+}
+
+/* Toy Images - Consistent Size */
+.toy-item img {
+    width: 20%;
+    height: 20px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Toy Item Text */
+.toy-item p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* Add to Basket Button */
+.toy-item button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: center;
+    width: 80%;
+}
+
+.toy-item button:hover {
+    background-color: #45a049;
+}
+
+/* Basket Button */
+.proceed-to-basket {
+    display: block;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 20px auto;
+    border-radius: 5px;
+    width: 200px;
+    text-decoration: none;
+}
+
+.proceed-to-basket:hover {
+    background-color: #45a049;
+}
+
+/* Home Icon */
+.home-icon img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align:center
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* About Page Background */ 
+body.about-page {
+    background-image: url('../images/AboutUsImage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+}
+
+/* Registration Page Styling */
+body.register-page {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 12px; /* Increase input padding */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Increase input text size */
+}
+
+form button {
+    width: 100%;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px; /* Increase button padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Increase button text size */
+}
+
+form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* center-align for smaller screens */
+    }
+
+    .left-section, .right-section {
+        flex: none;
+        width: auto; /* Full width for each section */
+        padding: 10px; /* Add spacing for smaller screens */
+    }
+
+    form {
+        width: 50%; /* Reduce form width */
+        padding: 15px; /* Adjust inner spacing */
+    }
+
+    .right-section img {
+        max-width: 40%; /* Ensure the image scales properly */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce margin between items */
+    }
+}
+
+/* NAVIGATION BAR FLEXBOX */
+nav {
+    display: flex;
+    justify-content: space-between; /* Ensures spacing between left, center, right */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* LEFT SECTION - ABOUT PAGE */
+.nav-left {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-left li {
+    display: inline-block;
+}
+
+.nav-left a {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* RIGHT SECTION - REGISTER & LOGIN */
+.nav-right {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Ensures Register & Login are side by side */
+    gap: 1100px; /* Adds spacing */
+}
+
+.nav-right li {
+    display: inline-block;
+}
+
+.nav-right a {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Move About button slightly up */
+.nav-left {
+    margin-top: -20px; /* Adjust this value as needed */
+}
+
+/* Move Register and Login buttons slightly up */
+.nav-right {
+    margin-top: -20px; /* Adjust this value as needed */
+}
+
+
+/* CENTER SECTION - OTHER NAVIGATION BUTTONS */
+.nav-center {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.nav-center li {
+    display: inline-block;
+}
+
+.nav-center a {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* BUTTON HOVER EFFECTS */
+.nav-left a:hover,
+.nav-right a:hover,
+.nav-center a:hover {
+    background-color: darkgreen;
+}
+
+/* MEDIA QUERY: Mobile-Friendly Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation vertically on small screens */
+        align-items: center;
+    }
+
+    .nav-left,
+    .nav-right,
+    .nav-center {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-right {
+        justify-content: center; /* Center Register & Login on mobile */
+    }
+}
+
+/* Style for Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(229, 159, 229); /* Change to purple */
+    color: rgb(48, 119, 91); /* Text color for visibility */
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+/* Ensure Links are Visible */
+.dropdown-content a {
+    color: rgb(117, 220, 224); /* Change text color */
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* When dropdown is open */
+.dropdown-content.show {
+    background: rgba(0, 150, 136, 0.9) !important; /* Change to your preferred color */
+    color: white; /* Text color */
+}
+/* Hover Effect */
+.dropdown-content a:hover {
+    background-color: darkviolet; /* Darker purple on hover */
+}
+
+/* Show Dropdown When Clicked */
+.show {
+    display: block;
+}
+
+
+/* Login Page Form Styling */
+.login-page form {
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Ensure inputs and buttons are properly sized */
+.login-page input,
+.login-page button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.login-page button {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login-page button:hover {
+    background: #45a049;
+}
+
+/* Adjust input width */
+.login-page input {
+    max-width: 300px;
+}
+
+/* Responsive design: Adjust form width on larger screens */
+@media (min-width: 1024px) {
+    .login-page form {
+        max-width: 350px; /* Adjust width */
+    }
+}
+
+

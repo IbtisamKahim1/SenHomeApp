@@ -37,27 +37,34 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const isLoggedIn = localStorage.getItem("isLoggedIn");
-            if (!isLoggedIn) {
-                alert("No user logged in. Redirecting to login page.");
-                window.location.href = "login.html"; // Redirect back to login
-                return;
-            }
-    
-            // Retrieve user details from localStorage
-            document.getElementById("usernameTitle").innerText = localStorage.getItem("username") || "User";
-            document.getElementById("usernameDisplay").innerText = localStorage.getItem("username") || "User";
-            document.getElementById("emailDisplay").innerText = localStorage.getItem("email") || "Not Available";
-            document.getElementById("joinDate").innerText = new Date().toLocaleDateString(); // Display current date for now
-        });
-    
-        function logout() {
-            localStorage.clear(); // Clear user data
-            alert("Logged out successfully!");
-            window.location.href = "login.html"; // Redirect to login
+    document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        if (!isLoggedIn) {
+            alert("No user logged in. Redirecting to login page.");
+            window.location.href = "login.html"; // Redirect back to login
+            return;
         }
-    </script>
+
+        // Display user info from localStorage
+        document.getElementById("usernameTitle").innerText = localStorage.getItem("username") || "User";
+        document.getElementById("usernameDisplay").innerText = localStorage.getItem("username") || "User";
+        document.getElementById("emailDisplay").innerText = localStorage.getItem("email") || "Not Available";
+        document.getElementById("joinDate").innerText = localStorage.getItem("joinDate") || new Date().toLocaleDateString();
+
+        // Attach logout button event
+        document.getElementById("logoutButton").addEventListener("click", function () {
+            localStorage.clear();
+            alert("Logged out successfully!");
+            window.location.href = "login.html";
+        });
+    });
+
+    // Add this function so the Edit Profile button works
+    function navigateToPage(page) {
+        window.location.href = page;
+    }
+</script>
+
         
 
 </body>

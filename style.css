@@ -249,8 +249,8 @@ body.login-page h1 {
 /* Login Page Home Icon */
 body.login-page .home-icon {
     position: absolute; /* Independent positioning */
-    top: 20px; /* Position similar to About Page */
-    left: 20px; /* Align it properly */
+    top: -80px; /* Position similar to About Page */
+    left: -26px; /* Align it properly */
     z-index: 30; /* Ensure visibility */
     display: block !important; /* Force it to be visible */
 }
@@ -436,9 +436,30 @@ body.service-requests-page {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: black;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; 
 }
 
+/* Full-screen semi-transparent overlay */
+.overlay {
+  position: fixed; /* Covers the whole screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(161, 199, 236, 0.4); /* Soft blue with transparency */
+  z-index: 1; /* Behind the content */
+}
+
+/* All content sits above the overlay */
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  color: #000; /* Make sure text is readable */
+}
 
 /* Link Styling for Resources page */
 
